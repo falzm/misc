@@ -1,0 +1,17 @@
+Here are some random code bits, results of my on-going self-teaching C experiments. There
+might be some fundamentally stupid stuff in here, please remember the previous
+statement when you'll stumble on some of those, and feel free to suggest some improvements.
+
+* stream
+
+This utility is the first of my "serious-and-why-not-useful" projects: is
+basically a clone of the UNIX `cat` command, however is allows you to limit the
+bitrate at which the data are streamed. Here is an usage example:
+
+$ cat /boot/vmlinuz | stream -b 100000 > /tmp/vmlinuz
+streamed 3322896 bytes in 34.18974s
+$ md5sum /boot/vmlinuz /tmp/vmlinuz
+38b0ab31bb6e6acbbfb8243b519d7cec  /boot/vmlinuz
+38b0ab31bb6e6acbbfb8243b519d7cec  /tmp/vmlinuz
+
+It's probably badly designed and not very precise, but it works.
